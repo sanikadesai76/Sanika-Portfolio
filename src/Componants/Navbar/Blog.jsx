@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./Blog.css";
 import { FaLeaf, FaExternalLinkAlt } from "react-icons/fa";
 
