@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d47a1"/>
+      <stop offset="100%" stop-color="#1976d2"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#64b5f6"/>
+      <stop offset="100%" stop-color="#42a5f5"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  
+  <!-- Folder shape -->
+  <g transform="translate(150,130)">
+    <path d="M40 0h90l30 30h210c17 0 30 13 30 30v170c0 17-13 30-30 30H30c-17 0-30-13-30-30V30C0 13 13 0 30 0h10z" fill="#102a43" opacity="0.4"/>
+    <path d="M35 8h95l28 28h214c12 0 22 10 22 22v24H0V38c0-16 13-30 30-30h5z" fill="#90caf9"/>
+    <rect x="0" y="82" width="390" height="170" rx="16" fill="url(#accent)"/>
+  </g>
+
+  <!-- File icons -->
+  <g transform="translate(210,210)">
+    <rect x="0" y="0" width="70" height="90" rx="6" fill="#ffffff"/>
+    <path d="M70 25H50c-6 0-10-4-10-10V0z" fill="#e3f2fd"/>
+    <rect x="12" y="38" width="46" height="8" rx="4" fill="#90caf9"/>
+    <rect x="12" y="54" width="40" height="8" rx="4" fill="#bbdefb"/>
+  </g>
+
+  <g transform="translate(310,210)">
+    <rect x="0" y="0" width="70" height="90" rx="6" fill="#ffffff"/>
+    <path d="M70 25H50c-6 0-10-4-10-10V0z" fill="#e3f2fd"/>
+    <rect x="12" y="38" width="46" height="8" rx="4" fill="#90caf9"/>
+    <rect x="12" y="54" width="40" height="8" rx="4" fill="#bbdefb"/>
+  </g>
+
+  <g transform="translate(410,210)">
+    <rect x="0" y="0" width="70" height="90" rx="6" fill="#ffffff"/>
+    <path d="M70 25H50c-6 0-10-4-10-10V0z" fill="#e3f2fd"/>
+    <rect x="12" y="38" width="46" height="8" rx="4" fill="#90caf9"/>
+    <rect x="12" y="54" width="40" height="8" rx="4" fill="#bbdefb"/>
+  </g>
+
+  <!-- Heading -->
+  <text x="400" y="90" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#e3f2fd" opacity="0.95">File Storage & Sharing</text>
+  <text x="400" y="118" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#bbdefb" opacity="0.9">AWS S3 • Lambda • API Gateway</text>
+</svg>
+

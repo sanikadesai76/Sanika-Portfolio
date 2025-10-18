@@ -1,0 +1,87 @@
+body.dark-mode {
+  background-color: #0b0c10;
+  color: #ffffff;
+}
+
+body.light-mode {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 50px;
+  font-family: "Poppins", sans-serif;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar h1 {
+  font-size: 20px;
+}
+
+.navbar h1 span {
+  color: #4f88ff;
+  font-weight: 600;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.navbar nav ul {
+  display: flex;
+  gap: 60px;
+  list-style: none;
+}
+
+.navbar nav ul li a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  position: relative;
+  padding-bottom: 4px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.navbar nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #4f88ff;
+  transition: width 0.3s ease;
+}
+
+.navbar nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Toggle Mode Button */
+.mode-toggle {
+  background: none;
+  border: 1px solid #4f88ff;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  color: #4f88ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.mode-toggle:hover {
+  background: #4f88ff20;
+  transform: scale(1.1);
+}

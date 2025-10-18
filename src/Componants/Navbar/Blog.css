@@ -1,0 +1,143 @@
+/* Default Light Mode */
+body.light-mode .blog-section {
+  background-color: #ffffff;
+  color: #0d0d0f;
+}
+
+body.light-mode .blog-card {
+  background-color: #f5f5f5;
+  color: #161b22;
+}
+
+body.light-mode .blog-card h3 {
+  color: #161b22;
+}
+
+body.light-mode .blog-card p {
+  color: #3b3b3b;
+}
+
+body.light-mode .blog-footer {
+  color: #555555;
+}
+
+body.light-mode .blog-footer .icon {
+  color: #3fb950;
+}
+
+body.light-mode .blog-button {
+  background-color: #2f81f7;
+  color: #fff;
+}
+
+body.light-mode .blog-button:hover {
+  background-color: #1f6feb;
+}
+
+/* Dark Mode (your existing CSS) */
+body.dark-mode .blog-section {
+  background-color: #0d0d0f;
+  color: #fff;
+}
+
+body.dark-mode .blog-card {
+  background-color: #161b22;
+  color: #c9d1d9;
+}
+
+body.dark-mode .blog-card h3 {
+  color: #f0f6fc;
+}
+
+body.dark-mode .blog-card p {
+  color: #8b949e;
+}
+
+body.dark-mode .blog-footer {
+  color: #7d8590;
+}
+
+body.dark-mode .blog-footer .icon {
+  color: #3fb950;
+}
+
+body.dark-mode .blog-button {
+  background-color: #2f81f7;
+  color: white;
+}
+
+body.dark-mode .blog-button:hover {
+  background-color: #1f6feb;
+}
+
+/* Common styles (apply to both modes) */
+.blog-section {
+  padding: 4rem 2rem;
+  margin-bottom: 80px;
+}
+
+.blog-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.blog-title span {
+  color: #58a6ff;
+  border-bottom: 3px solid #58a6ff;
+  padding-bottom: 5px;
+}
+
+.blog-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.blog-card {
+  border: 1px solid rgba(240, 246, 252, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 320px;
+  box-shadow: none;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 10px rgba(88, 166, 255, 0.15);
+}
+
+.blog-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.blog-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.blog-footer {
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.blog-button {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
