@@ -1,0 +1,121 @@
+/* Global Mobile Responsive Styles */
+
+/* Smooth scrolling for all devices */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent horizontal scroll on mobile */
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ensure all elements respect box-sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Base responsive font size */
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+/* Improve touch targets for mobile */
+@media (max-width: 768px) {
+  /* Ensure buttons and links are at least 44px for touch accessibility */
+  .btn-primary, 
+  .btn-outline,
+  .code-btn,
+  .demo-btn,
+  .blog-button {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Improve text readability on mobile */
+  body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+
+  /* Better focus indicators for mobile */
+  *:focus {
+    outline: 2px solid #4f9cf9;
+    outline-offset: 2px;
+  }
+}
+
+/* Tablet specific improvements */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Ensure proper spacing on tablets */
+  .home-section,
+  .about-section,
+  .projects-section,
+  .experience,
+  .blog-section,
+  .achievement-section,
+  .contact-section {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Large screen optimizations */
+@media (min-width: 1200px) {
+  /* Ensure content doesn't get too wide on large screens */
+  .home-section,
+  .about-container,
+  .project-list,
+  .timeline-container,
+  .blog-grid,
+  .achievement-grid,
+  .contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+/* High DPI display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Ensure crisp text rendering on high DPI displays */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Landscape mobile orientation */
+@media (max-width: 768px) and (orientation: landscape) {
+  .home-section {
+    min-height: auto;
+    padding: 40px 20px;
+  }
+  
+  .home-right img {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+}

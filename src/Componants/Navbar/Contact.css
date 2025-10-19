@@ -129,13 +129,82 @@ body.dark-mode .contact-section {
   color: #e6edf3;
 }
 
-@media (max-width: 900px) {
+/* Mobile Responsive Enhancements for Contact Section */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+  }
+
   .contact-container {
     grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
+
   .form-row {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 }
 
+@media (max-width: 500px) {
+  .contact-section {
+    padding: 2.5rem 1rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .section-title::after {
+    width: 60px;
+    height: 2px;
+    bottom: -8px;
+  }
+
+  .contact-container {
+    gap: 2rem;
+  }
+
+  .contact-info {
+    gap: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .info-item {
+    gap: 0.6rem;
+  }
+
+  .info-item svg {
+    min-width: 16px;
+    min-height: 16px;
+  }
+
+  .contact-form {
+    gap: 0.8rem;
+  }
+
+  .form-row {
+    gap: 0.8rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 10px 12px;
+  }
+
+  .contact-form .btn-primary {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+
+  .status-message {
+    font-size: 0.85rem;
+  }
+}
 

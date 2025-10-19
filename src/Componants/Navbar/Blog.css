@@ -141,3 +141,76 @@ body.dark-mode .blog-button:hover {
   text-decoration: none;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
+
+/* Mobile Responsive Enhancements for Blog Section */
+@media (max-width: 768px) {
+  .blog-section {
+    padding: 3rem 1.5rem;
+    margin-bottom: 70px;
+  }
+
+  .blog-title {
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .blog-grid {
+    gap: 1.8rem;
+  }
+
+  .blog-card {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 500px) {
+  .blog-section {
+    padding: 2.5rem 1rem;
+    margin-bottom: 60px;
+  }
+
+  .blog-title {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .blog-title span {
+    border-bottom-width: 2px;
+  }
+
+  .blog-grid {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .blog-card {
+    width: 100%;
+    padding: 1.2rem;
+    border-radius: 10px;
+  }
+
+  .blog-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .blog-card p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 0.8rem;
+  }
+
+  .blog-footer {
+    font-size: 0.8rem;
+    gap: 0.4rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .blog-button {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    border-radius: 8px;
+  }
+}

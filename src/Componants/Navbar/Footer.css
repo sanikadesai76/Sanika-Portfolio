@@ -44,4 +44,45 @@ body.light-mode .site-footer {
   border-color: rgba(88, 166, 255, 0.5);
 }
 
+/* Mobile Responsive Enhancements for Footer */
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 18px 25px;
+  }
+
+  .footer-inner {
+    gap: 15px;
+  }
+
+  .footer-right {
+    gap: 12px;
+  }
+
+  .footer-right a {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-footer {
+    padding: 15px 20px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-right {
+    gap: 10px;
+  }
+
+  .footer-right a {
+    width: 30px;
+    height: 30px;
+  }
+}
 
