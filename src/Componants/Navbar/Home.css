@@ -1,101 +1,83 @@
+/* ------------------------------
+   Base Styles
+------------------------------ */
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
+  max-width: 1500px;
+  overflow-x: hidden;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
+/* Light & Dark Mode Variables */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #0e0f12;
+  --accent-color: #4f9cf9;
+  --accent-hover: #3580db;
+  --text-muted: #555;
+}
+
+body.dark,
+body.dark-mode {
+  --bg-color: #0e0f12;
+  --text-color: #ffffff;
+  --text-muted: #d1d5db;
+}
+
+/* ------------------------------
+   Home Section Layout
+------------------------------ */
 .home-section {
-  padding: 80px 50px 100px 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 80px 70px 100px;
   min-height: calc(100vh - 80px);
   box-sizing: border-box;
+  transition: background-color 0.4s ease;
 }
 
-body.dark .home-section {
-  background-color: #0e0f12;
-  color: #ffffff;
-}
-
-body.light .home-section {
-  background-color: #ffffff;
-  color: #0e0f12;
-}
-
-/* Align with app's body classes controlled by Nav.jsx */
-body.dark-mode .home-section {
-  background-color: #0e0f12;
-  color: #ffffff;
-}
-
-body.light-mode .home-section {
-  background-color: #ffffff;
-  color: #0e0f12;
-}
-
+/* ------------------------------
+   Left Content
+------------------------------ */
 .home-left {
   flex: 1.5;
   display: flex;
   flex-direction: column;
-  gap: 0.1rem;
+  gap: 0.5rem;
   opacity: 0;
-  transform: translateY(18px);
-  animation: heroIn 700ms cubic-bezier(0.22, 1, 0.36, 1) 150ms forwards;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .title {
-  font-size: 4rem;
-  font-weight: 700;
-  margin-bottom: 1px;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  line-height: 0.8;
 }
 
 .highlight {
-  color: transparent;
   background: linear-gradient(90deg, #4f9cf9, #7a5cff, #00e0ff);
   -webkit-background-clip: text;
   background-clip: text;
+  color: transparent;
   background-size: 200% 100%;
   animation: hueShift 6s ease-in-out infinite alternate;
 }
 
-@keyframes hueShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
-
-@keyframes heroIn {
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-@keyframes floatY {
-  0% {
-    transform: translateY(0) scale(1);
-  }
-  100% {
-    transform: translateY(-8px) scale(1.005);
-  }
-}
-
-.description {
-  max-width: 700px;
-  line-height: 1.5;
-  font-size: 1.4rem;
-}
-
+/* ------------------------------
+   Typewriter Animation
+------------------------------ */
 .typewriter {
-  height: 28px;
-  margin: 8px 0 10px;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
   font-size: 1.1rem;
+  margin: 8px 0 10px;
   letter-spacing: 0.3px;
 }
 
@@ -104,28 +86,19 @@ body.light-mode .home-section {
 }
 
 .caret {
-  color: #4f9cf9;
+  color: var(--accent-color);
   animation: blink 1s step-end infinite;
 }
 
-@keyframes blink {
-  50% { opacity: 0; }
-}
-
-body.dark .description {
-  color: #d1d5db;
-}
-
-body.light .description {
-  color: #333333;
-}
-
-body.dark-mode .description {
-  color: #d1d5db;
-}
-
-body.light-mode .description {
-  color: #333333;
+/* ------------------------------
+   Description & Buttons
+------------------------------ */
+.description {
+  max-width: 700px;
+  line-height: 1.6;
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
 }
 
 .social-icons {
@@ -133,63 +106,69 @@ body.light-mode .description {
   gap: 1.2rem;
   font-size: 2rem;
   margin-bottom: 1.5rem;
+  justify-content: flex-start;
 }
 
 .social-icons a {
   color: #777;
-  transition: 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.social-icons a:hover {
-  color: #4f9cf9;
-  transform: scale(1.2);
+.social-icons a:hover,
+.social-icons a:focus-visible {
+  color: var(--accent-color);
+  transform: scale(1.15);
 }
 
 .buttons {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .btn-link {
   text-decoration: none;
 }
 
-.btn-primary {
-  background-color: #4f9cf9;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
+.btn-primary,
+.btn-outline {
+  padding: 10px 22px;
   border-radius: 8px;
-  font-weight: 400;
+  font-weight: 500;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
 }
 
 .btn-primary:hover {
-  background-color: #3580db;
+  background-color: var(--accent-hover);
 }
 
 .btn-outline {
   background-color: transparent;
-  color: #4f9cf9;
-  border: 2px solid #4f9cf9;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: 0.3s ease;
+  color: var(--accent-color);
+  border: 2px solid var(--accent-color);
 }
 
 .btn-outline:hover {
-  background-color: #4f9cf9;
+  background-color: var(--accent-color);
   color: #fff;
 }
 
+/* ------------------------------
+   Right Image
+------------------------------ */
 .home-right {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-left: 180px;
 }
 
 .home-right img {
@@ -197,90 +176,78 @@ body.light-mode .description {
   height: 280px;
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid #4f9cf9;
-  box-shadow: 0 0 20px #4f9cf9;
-  object-position: center;
+  border: 4px solid var(--accent-color);
+  box-shadow: 0 0 20px var(--accent-color);
   opacity: 0;
-  transform: translateY(18px) scale(0.98);
-  animation: heroIn 800ms cubic-bezier(0.22, 1, 0.36, 1) 280ms forwards,
-    floatY 6s ease-in-out 1s infinite alternate;
+  transform: translateY(20px) scale(0.98);
+  animation: fadeInUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 200ms forwards,
+             floatY 6s ease-in-out 1s infinite alternate;
 }
 
-/* Mobile Responsive Enhancements for Home Section */
+/* ------------------------------
+   Animations
+------------------------------ */
+@keyframes hueShift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes floatY {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-8px) scale(1.005); }
+}
+
+/* ------------------------------
+   Responsive Design
+------------------------------ */
 @media (max-width: 1024px) {
   .home-section {
-    padding: 60px 40px 80px 60px;
-  }
-
-  .title {
-    font-size: 3.5rem;
+    padding: 60px 50px 80px;
   }
 
   .description {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 }
 
 @media (max-width: 768px) {
   .home-section {
     flex-direction: column;
-    align-items: center;
-    padding: 40px 20px 60px 20px;
-    min-height: auto;
     text-align: center;
+    padding: 50px 25px 70px;
+    min-height: auto;
   }
 
   .home-left {
-    flex: 1;
-    text-align: center;
-    gap: 0.5rem;
     width: 100%;
-    max-width: 600px;
-  }
-
-  .title {
-    font-size: 2.8rem;
-    margin-bottom: 1rem;
-  }
-
-  .description {
-    font-size: 1.1rem;
-    max-width: 100%;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+    align-items: center;
   }
 
   .typewriter {
     justify-content: center;
-    font-size: 1rem;
-    margin: 1rem 0;
   }
 
   .social-icons {
     justify-content: center;
-    gap: 1.2rem;
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
   }
 
   .buttons {
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .btn-primary,
-  .btn-outline {
-    padding: 12px 24px;
-    font-size: 1rem;
-    min-width: 120px;
   }
 
   .home-right {
     margin-top: 40px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
   }
 
   .home-right img {
@@ -289,43 +256,21 @@ body.light-mode .description {
   }
 }
 
-/* Extra Small Screens (≤ 480px) */
 @media (max-width: 480px) {
   .home-section {
-    padding: 30px 15px 50px 15px;
+    padding: 35px 18px 55px;
   }
 
   .title {
-    font-size: 2.2rem;
-    margin-bottom: 0.8rem;
+    font-size: 2rem;
   }
 
   .description {
     font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 1.2rem;
-  }
-
-  .typewriter {
-    font-size: 0.95rem;
-    margin: 0.8rem 0;
   }
 
   .social-icons {
     font-size: 1.6rem;
-    gap: 1rem;
-    margin-bottom: 1.2rem;
-  }
-
-  .btn-primary,
-  .btn-outline {
-    padding: 10px 20px;
-    font-size: 0.9rem;
-    min-width: 100px;
-  }
-
-  .home-right {
-    margin-top: 30px;
   }
 
   .home-right img {
@@ -334,30 +279,15 @@ body.light-mode .description {
   }
 }
 
-/* Very small screens (≤ 360px) */
 @media (max-width: 360px) {
-  .home-section {
-    padding: 25px 12px 40px 12px;
-  }
-
   .title {
-    font-size: 1.9rem;
-  }
-
-  .description {
-    font-size: 0.95rem;
-  }
-
-  .social-icons {
-    font-size: 1.4rem;
-    gap: 0.8rem;
+    font-size: 1.8rem;
   }
 
   .btn-primary,
   .btn-outline {
     padding: 8px 16px;
     font-size: 0.85rem;
-    min-width: 90px;
   }
 
   .home-right img {
